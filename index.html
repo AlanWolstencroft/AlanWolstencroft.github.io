@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alan Wolstencroft — Healthcare Marketing & Creative Director</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --steel: #1b2d45;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --cream: #f5f0e8;
+    --white: #ffffff;
+    --gray: #8a9bb0;
+    --light-gray: #e8edf3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(13,27,42,0.96);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    padding: 18px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  /* HERO — Version 1 style */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero-content {
+    padding: 120px 80px 80px;
+    max-width: 900px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.6s ease forwards;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 24px;
+    font-weight: 900;
+    animation: fadeUp 0.6s ease 0.2s both;
+  }
+
+  .hero h1 span {
+    color: var(--gold);
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--gray);
+    line-height: 1.7;
+    max-width: 560px;
+    margin-bottom: 48px;
+    font-weight: 300;
+    animation: fadeUp 0.6s ease 0.4s both;
+  }
+
+  .hero-ctas {
+    margin-bottom: 48px;
+    animation: fadeUp 0.6s ease 0.5s both;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 16px 32px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+    margin-right: 16px;
+  }
+
+  .hero-cta:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+  }
+
+  .hero-cta-outline {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 16px 32px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+  }
+
+  .hero-cta-outline:hover {
+    background: rgba(201,168,76,0.1);
+    transform: translateY(-2px);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    animation: fadeUp 0.6s ease 0.6s both;
+  }
+
+  .stat-item { text-align: left; }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 6px;
+  }
+
+  /* ABOUT — Version 1 style with dark credential boxes */
+  .about {
+    background: var(--white);
+    padding: 100px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .section-tag {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .about h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: var(--navy);
+  }
+
+  .about p {
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1rem;
+  }
+
+  /* Version 1 credential boxes — single column stacked on right */
+  .credentials {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .credential-item {
+    padding: 24px;
+    border: 1px solid var(--light-gray);
+    position: relative;
+  }
+
+  .credential-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--gold);
+  }
+
+  .credential-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--navy);
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+
+  .credential-sub {
+    font-size: 0.8rem;
+    color: var(--gray);
+  }
+
+  /* PORTFOLIO */
+  .portfolio {
+    background: var(--cream);
+    padding: 100px 80px;
+  }
+
+  .portfolio-header { margin-bottom: 60px; }
+
+  .portfolio-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+
+  .portfolio-header p {
+    color: #4a5568;
+    max-width: 500px;
+  }
+
+  .portfolio-section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--light-gray);
+    margin-top: 60px;
+  }
+
+  .portfolio-section-label:first-of-type { margin-top: 0; }
+
+  /* FEATURED — landscape Mason Jar */
+  .featured-card {
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+  }
+
+  .featured-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(13,27,42,0.12);
+  }
+
+  .featured-image {
+    height: 340px;
+    background: var(--steel);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+  }
+
+  .featured-card:hover .featured-image img { transform: scale(1.03); }
+
+  .featured-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--steel) 0%, var(--navy) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+  }
+
+  .featured-placeholder-text {
+    font-family: 'Playfair Display', serif;
+    color: rgba(201,168,76,0.5);
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .featured-content {
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    width: fit-content;
+  }
+
+  .card-client {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--navy);
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+
+  .card-desc {
+    font-size: 0.875rem;
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .card-result {
+    font-size: 0.8rem;
+    color: var(--navy);
+    font-weight: 500;
+    padding: 12px 16px;
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+
+  .card-role {
+    font-size: 0.75rem;
+    color: var(--gray);
+    font-style: italic;
+    margin-top: 8px;
+  }
+
+  /* PORTRAIT GRID */
+  .portrait-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .portrait-card {
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .portrait-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(13,27,42,0.12);
+  }
+
+  .portrait-image {
+    aspect-ratio: 836 / 600;
+    background: var(--steel);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .portrait-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.4s;
+  }
+
+  .portrait-card:hover .portrait-image img { transform: scale(1.04); }
+
+  .portrait-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(160deg, var(--steel) 0%, var(--navy) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .portrait-placeholder-text {
+    font-family: 'Playfair Display', serif;
+    color: rgba(201,168,76,0.45);
+    font-size: 0.85rem;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .portrait-content { padding: 24px; }
+
+  .portrait-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .portrait-client {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .portrait-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--navy);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .portrait-desc {
+    font-size: 0.8rem;
+    color: #4a5568;
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+
+  .portrait-result {
+    font-size: 0.75rem;
+    color: var(--navy);
+    font-weight: 500;
+    padding: 8px 12px;
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    line-height: 1.5;
+  }
+
+  .portrait-role {
+    font-size: 0.7rem;
+    color: var(--gray);
+    font-style: italic;
+    margin-top: 10px;
+  }
+
+  /* VIDEO */
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .video-card {
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .video-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(13,27,42,0.12);
+  }
+
+  .video-embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .video-embed iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .video-content { padding: 22px 24px; }
+
+  .video-client {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .video-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .video-desc {
+    font-size: 0.8rem;
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .video-result {
+    font-size: 0.75rem;
+    color: var(--navy);
+    font-weight: 500;
+    padding: 8px 12px;
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+  }
+
+  /* QUOTES — Version 1 style */
+  .quotes {
+    background: var(--navy);
+    padding: 60px 80px;
+  }
+
+  .quotes h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .quotes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .quote-card {
+    padding: 28px 32px;
+    border: 1px solid rgba(201,168,76,0.2);
+    position: relative;
+  }
+
+  .quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: var(--gold);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: -20px;
+  }
+
+  .quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--white);
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+
+  .quote-attribution {
+    font-size: 0.8rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* CONTACT */
+  .contact {
+    background: var(--cream);
+    padding: 100px 80px;
+    text-align: center;
+  }
+
+  .contact h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+
+  .contact p {
+    color: #4a5568;
+    font-size: 1.1rem;
+    margin-bottom: 48px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .contact-item { text-align: center; }
+
+  .contact-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .contact-value {
+    font-size: 1.1rem;
+    color: var(--navy);
+    font-weight: 500;
+    text-decoration: none;
+    display: block;
+  }
+
+  .contact-value:hover { color: var(--gold); }
+
+  footer {
+    background: var(--navy);
+    padding: 32px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1rem;
+  }
+
+  .footer-copy { font-size: 0.8rem; color: var(--gray); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero-content { padding: 100px 24px 60px; }
+    .hero-stats { gap: 24px; flex-wrap: wrap; }
+    .about { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
+    .credentials { grid-template-columns: 1fr; }
+    .portfolio { padding: 60px 24px; }
+    .featured-card { grid-template-columns: 1fr; }
+    .featured-image { height: 260px; }
+    .portrait-grid { grid-template-columns: 1fr; }
+    .video-grid { grid-template-columns: 1fr; }
+    .quotes { padding: 60px 24px; }
+    .quotes-grid { grid-template-columns: 1fr; }
+    .contact { padding: 60px 24px; }
+    .contact-details { flex-direction: column; gap: 32px; }
+    footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Alan Wolstencroft</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#video">Video</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO — Version 1 -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Executive Creative Director &nbsp;|&nbsp; Healthcare Marketing</div>
+    <h1>Alan<span>Wolstencroft, MBA</span></h1>
+    <p class="hero-sub">Senior creative and brand strategy leader with 20+ years launching hospitals, unifying health systems and building campaigns that move patients to action — and awards committees to attention.</p>
+    <div class="hero-ctas">
+      <a href="#work" class="hero-cta">View My Work</a>
+      <a href="#contact" class="hero-cta-outline">Get In Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-number">20+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">17</div>
+        <div class="stat-label">Centura Hospitals</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">$80M</div>
+        <div class="stat-label">Agency Led</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">25%</div>
+        <div class="stat-label">CyberKnife Goal Exceeded</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT — Version 1 with dark credential boxes -->
+<section class="about" id="about">
+  <div>
+    <div class="section-tag">About</div>
+    <h2>The creative director who also does the work.</h2>
+    <p>I've led teams of 25. I've also been the team of one. I've directed $300,000 TV spots from concept through final edit, developed brand standards for 17-hospital systems and launched $200M facilities from the ground up.</p>
+    <p>My work spans healthcare systems, luxury resorts and everything in between — but healthcare is where I'm most at home. I know how to make a large, complex health system speak with one voice without losing what makes each facility matter to its community.</p>
+  </div>
+  <div class="credentials">
+    <div class="credential-item">
+      <div class="credential-title">Vladimir Jones</div>
+      <div class="credential-sub">Executive Creative Director<br>$80M Healthcare Agency</div>
+    </div>
+    <div class="credential-item">
+      <div class="credential-title">Wynn &amp; Encore</div>
+      <div class="credential-sub">Senior Brand Marketing Lead<br>$1.7B Global Resort</div>
+    </div>
+    <div class="credential-item">
+      <div class="credential-title">Centura Health</div>
+      <div class="credential-sub">17 Hospitals<br>Colorado's Largest Provider</div>
+    </div>
+    <div class="credential-item">
+      <div class="credential-title">Concept 101</div>
+      <div class="credential-sub">Managing Director<br>Healthcare &amp; Hospitality</div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="work">
+  <div class="portfolio-header">
+    <div class="section-tag">Selected Work</div>
+    <h2>Healthcare Campaigns</h2>
+    <p>Brand launches, service line campaigns and system-wide creative — built from strategy through execution.</p>
+  </div>
+
+  <!-- FEATURED — Nevada Cancer Institute -->
+  <div class="portfolio-section-label">Featured Campaign</div>
+
+  <div class="featured-card">
+    <div class="featured-image">
+      <img src="0 NV CANCER.png" alt="Nevada Cancer Institute Mason Jar Campaign" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+    <div class="featured-content">
+      <div class="card-tag">Brand Campaign</div>
+      <div class="card-client">Nevada Cancer Institute — Las Vegas, NV</div>
+      <div class="card-title">"We Often Take Time For Granted"</div>
+      <div class="card-desc">Emotionally resonant donor and awareness campaign translating the value of time into a visual fundraising story — built around the simple, powerful image of a mason jar.</div>
+      <div class="card-result">🏆 Featured in national award competitions. Significantly elevated donor visibility and brand awareness.</div>
+      <div class="card-role">Role: Creative Director, Copywriter, Art Director, Strategist</div>
+    </div>
+  </div>
+
+  <!-- ADVENTHEALTH -->
+  <div class="portfolio-section-label">AdventHealth Riverview — Hospital Launch Campaign</div>
+  <div class="portrait-grid">
+
+    <div class="portrait-card">
+      <div class="portrait-image">
+        <img src="1 ADVENT Open House.png" alt="AdventHealth Open House Ad" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+      </div>
+      <div class="portrait-content">
+        <div class="portrait-tag">Hospital Launch</div>
+        <div class="portrait-client">AdventHealth Riverview — Tampa, FL</div>
+        <div class="portrait-title">You're Invited to Our Open House</div>
+        <div class="portrait-desc">Tour the new hospital and meet physicians and staff before it opens — community-first launch campaign for AdventHealth's newest Tampa facility.</div>
+        <div class="portrait-result">Part of three-campaign launch package. Delivered in two days.</div>
+        <div class="portrait-role">Role: Creative Director, Copywriter, Art Director, Designer, Strategist</div>
+      </div>
+    </div>
+
+    <div class="portrait-card">
+      <div class="portrait-image">
+        <img src="2 ADVENT Expecting.png" alt="AdventHealth Maternity Ad" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+      </div>
+      <div class="portrait-content">
+        <div class="portrait-tag">Service Line</div>
+        <div class="portrait-client">AdventHealth Riverview — Tampa, FL</div>
+        <div class="portrait-title">What to Expect When You're Expecting</div>
+        <div class="portrait-desc">Service line promotion introducing the hospital's maternity program — connecting expecting mothers with the right experts at the right moment.</div>
+        <div class="portrait-result">Part of three-campaign launch package. Drove community awareness and new patient acquisition.</div>
+        <div class="portrait-role">Role: Creative Director, Copywriter, Art Director, Designer</div>
+      </div>
+    </div>
+
+    <div class="portrait-card">
+      <div class="portrait-image">
+        <img src="3 ADVENT Seniors.png" alt="AdventHealth Senior Wellness Ad" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+      </div>
+      <div class="portrait-content">
+        <div class="portrait-tag">Service Line</div>
+        <div class="portrait-client">AdventHealth Riverview — Tampa, FL</div>
+        <div class="portrait-title">Learn What Makes Seniors Like You So Special</div>
+        <div class="portrait-desc">Senior wellness service line campaign inviting the community to attend seminars and discover ways to stay active and improve senior lifestyle.</div>
+        <div class="portrait-result">Part of three-campaign launch package. Drove seminar attendance and community engagement.</div>
+        <div class="portrait-role">Role: Creative Director, Copywriter, Art Director, Designer</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MERCY GENERAL -->
+  <div class="portfolio-section-label">Mercy General Health Partners — Weight Management Campaign</div>
+  <div class="portrait-grid">
+
+    <div class="portrait-card">
+      <div class="portrait-image">
+        <img src="4 MERCY GEN.png" alt="Mercy General Weight Management Ad 1" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+      </div>
+      <div class="portrait-content">
+        <div class="portrait-tag">Brand Campaign</div>
+        <div class="portrait-client">Mercy General Health Partners</div>
+        <div class="portrait-title">Center for Weight Management</div>
+        <div class="portrait-desc">Patient-centered campaign featuring real patient transformations — shifting the conversation from weight loss to life gained and a renewed self-image.</div>
+        <div class="portrait-result">Presented directly to physicians and executive staff.</div>
+        <div class="portrait-role">Role: Creative Director, Copywriter, Brand Strategist</div>
+      </div>
+    </div>
+
+    <div class="portrait-card">
+      <div class="portrait-image">
+        <img src="5 MERCY GEN.png" alt="Mercy General Weight Management Ad 2" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+      </div>
+      <div class="portrait-content">
+        <div class="portrait-tag">Brand Campaign</div>
+        <div class="portrait-client">Mercy General Health Partners</div>
+        <div class="portrait-title">Center for Weight Management</div>
+        <div class="portrait-desc">Patient-centered campaign featuring real patient transformations — shifting the conversation from weight loss to life gained and a renewed self-image.</div>
+        <div class="portrait-result">Three-ad campaign presented directly to physicians and executive staff.</div>
+        <div class="portrait-role">Role: Creative Director, Copywriter, Brand Strategist</div>
+      </div>
+    </div>
+
+    <div class="portrait-card">
+      <div class="portrait-image">
+        <img src="6 MERCY GEN.png" alt="Mercy General Weight Management Ad 3" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+      </div>
+      <div class="portrait-content">
+        <div class="portrait-tag">Brand Campaign</div>
+        <div class="portrait-client">Mercy General Health Partners</div>
+        <div class="portrait-title">Center for Weight Management</div>
+        <div class="portrait-desc">Patient-centered campaign featuring real patient transformations — shifting the conversation from weight loss to life gained and a renewed self-image.</div>
+        <div class="portrait-result">Real patients. Real results. Real stories.</div>
+        <div class="portrait-role">Role: Creative Director, Copywriter, Brand Strategist</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- VIDEO -->
+  <div class="portfolio-section-label" id="video">Broadcast & Video</div>
+  <div class="video-grid">
+
+    <div class="video-card">
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/JumVFdBufnE" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="video-content">
+        <div class="video-client">Penrose Cancer Center — Colorado Springs, CO</div>
+        <div class="video-title">CyberKnife — TV Spot</div>
+        <div class="video-desc">Introductory broadcast campaign for revolutionary cancer surgery service. Presented directly to oncology doctors and executive staff. Full campaign produced under $80K.</div>
+        <div class="video-result">📈 Exceeded first-year patient goals by 25%</div>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/g0BGZq_pAiQ" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="video-content">
+        <div class="video-client">Oakwood Hospitals — Michigan</div>
+        <div class="video-title">Skateboard Dad — ER Services TV Spot</div>
+        <div class="video-desc">"See an ER doctor in 30 minutes or less." Full print and broadcast campaign presented to Oakwood executive staff. Solo project from concept through final edit.</div>
+        <div class="video-result">Michigan's third-largest healthcare provider</div>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/OWfGiMKbw0g" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="video-content">
+        <div class="video-client">Oakwood Heart & Vascular Center — Michigan</div>
+        <div class="video-title">Heartbeats — $200M Launch TV Spot</div>
+        <div class="video-desc">Introductory broadcast campaign for the new $200M Oakwood Surgical Pavilion & Heart and Vascular Center. Solo project from concept through final edit.</div>
+        <div class="video-result">$200M facility launch campaign</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- QUOTES — Version 1 -->
+<section class="quotes">
+  <h2>What the Critics Are Saying</h2>
+  <div class="quotes-grid">
+    <div class="quote-card">
+      <div class="quote-mark">"</div>
+      <div class="quote-text">This is great work.</div>
+      <div class="quote-attribution">CEO — HCA Healthcare</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-mark">"</div>
+      <div class="quote-text">If Riverview doesn't hire you, let me know so I can steal you.</div>
+      <div class="quote-attribution">CEO — AdventHealth</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT — no location -->
+<section class="contact" id="contact">
+  <div class="section-tag">Let's Connect</div>
+  <h2>Ready When You Are</h2>
+  <p>Available for full-time, fractional or project-based engagements.</p>
+  <div class="contact-details">
+    <div class="contact-item">
+      <div class="contact-label">Email</div>
+      <a href="mailto:APWolstencroft@gmail.com" class="contact-value">APWolstencroft@gmail.com</a>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label">Phone</div>
+      <a href="tel:4048626373" class="contact-value">(404) 862-6373</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Alan Wolstencroft, MBA</div>
+  <div class="footer-copy">© 2026 · Executive Creative Director · Healthcare Marketing</div>
+</footer>
+
+</body>
+</html>
