@@ -20,6 +20,62 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
 
+  /* LIGHTBOX */
+  .lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.92);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .lightbox.active { display: flex; }
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    box-shadow: 0 0 60px rgba(0,0,0,0.5);
+  }
+  .lightbox-video {
+    width: 85vw;
+    max-width: 960px;
+    aspect-ratio: 16/9;
+    border: none;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    color: var(--gold);
+    font-size: 2.5rem;
+    cursor: pointer;
+    line-height: 1;
+    font-family: sans-serif;
+  }
+  .click-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(13,27,42,0.8);
+    color: var(--gold);
+    text-align: center;
+    padding: 8px;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  .portrait-image:hover .click-overlay,
+  .featured-image:hover .click-overlay,
+  .video-embed:hover .click-overlay { opacity: 1; }
+  .portrait-image { cursor: pointer; }
+  .featured-image { cursor: pointer; }
+  .video-embed { cursor: pointer; position: relative; }
+
   body {
     font-family: 'DM Sans', sans-serif;
     background: var(--cream);
@@ -828,7 +884,8 @@
 
   <div class="featured-card">
     <div class="featured-image">
-      <img src="0 NV CANCER.png" alt="Nevada Cancer Institute Mason Jar Campaign" style="width:100%;height:100%;object-fit:cover;">
+      <img src="0 NV CANCER.png" alt="Nevada Cancer Institute Mason Jar Campaign" style="width:100%;height:100%;object-fit:cover;" onclick="openLightbox('0 NV CANCER.png')">
+      <div class="click-overlay">Click to View Full Ad</div>
     </div>
     <div class="featured-content">
       <div class="card-tag">Brand Campaign</div>
@@ -846,7 +903,8 @@
 
     <div class="portrait-card">
       <div class="portrait-image">
-        <img src="1 ADVENT Open House.png" alt="AdventHealth Open House Ad" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+        <img src="1 ADVENT Open House.png" alt="AdventHealth Open House Ad" style="width:100%;height:100%;object-fit:cover;object-position:top;" onclick="openLightbox('1 ADVENT Open House.png')">
+        <div class="click-overlay">Click to View Full Ad</div>
       </div>
       <div class="portrait-content">
         <div class="portrait-tag">Hospital Launch</div>
@@ -860,7 +918,8 @@
 
     <div class="portrait-card">
       <div class="portrait-image">
-        <img src="2 ADVENT Expecting.png" alt="AdventHealth Maternity Ad" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+        <img src="2 ADVENT Expecting.png" alt="AdventHealth Maternity Ad" style="width:100%;height:100%;object-fit:cover;object-position:top;" onclick="openLightbox('2 ADVENT Expecting.png')">
+        <div class="click-overlay">Click to View Full Ad</div>
       </div>
       <div class="portrait-content">
         <div class="portrait-tag">Service Line</div>
@@ -874,7 +933,8 @@
 
     <div class="portrait-card">
       <div class="portrait-image">
-        <img src="3 ADVENT Seniors.png" alt="AdventHealth Senior Wellness Ad" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+        <img src="3 ADVENT Seniors.png" alt="AdventHealth Senior Wellness Ad" style="width:100%;height:100%;object-fit:cover;object-position:top;" onclick="openLightbox('3 ADVENT Seniors.png')">
+        <div class="click-overlay">Click to View Full Ad</div>
       </div>
       <div class="portrait-content">
         <div class="portrait-tag">Service Line</div>
@@ -894,7 +954,8 @@
 
     <div class="portrait-card">
       <div class="portrait-image">
-        <img src="4 MERCY GEN.png" alt="Mercy General Weight Management Ad 1" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+        <img src="4 MERCY GEN.png" alt="Mercy General Weight Management Ad 1" style="width:100%;height:100%;object-fit:cover;object-position:top;" onclick="openLightbox('4 MERCY GEN.png')">
+        <div class="click-overlay">Click to View Full Ad</div>
       </div>
       <div class="portrait-content">
         <div class="portrait-tag">Brand Campaign</div>
@@ -908,7 +969,8 @@
 
     <div class="portrait-card">
       <div class="portrait-image">
-        <img src="5 MERCY GEN.png" alt="Mercy General Weight Management Ad 2" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+        <img src="5 MERCY GEN.png" alt="Mercy General Weight Management Ad 2" style="width:100%;height:100%;object-fit:cover;object-position:top;" onclick="openLightbox('5 MERCY GEN.png')">
+        <div class="click-overlay">Click to View Full Ad</div>
       </div>
       <div class="portrait-content">
         <div class="portrait-tag">Brand Campaign</div>
@@ -922,7 +984,8 @@
 
     <div class="portrait-card">
       <div class="portrait-image">
-        <img src="6 MERCY GEN.png" alt="Mercy General Weight Management Ad 3" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+        <img src="6 MERCY GEN.png" alt="Mercy General Weight Management Ad 3" style="width:100%;height:100%;object-fit:cover;object-position:top;" onclick="openLightbox('6 MERCY GEN.png')">
+        <div class="click-overlay">Click to View Full Ad</div>
       </div>
       <div class="portrait-content">
         <div class="portrait-tag">Brand Campaign</div>
@@ -941,8 +1004,9 @@
   <div class="video-grid">
 
     <div class="video-card">
-      <div class="video-embed">
-        <iframe src="https://www.youtube.com/embed/JumVFdBufnE" allowfullscreen loading="lazy"></iframe>
+      <div class="video-embed" onclick="openVideo('JumVFdBufnE')">
+        <img src="https://img.youtube.com/vi/JumVFdBufnE/hqdefault.jpg" alt="CyberKnife TV Spot" style="width:100%;height:100%;object-fit:cover;">
+        <div class="click-overlay">▶ Click to Watch</div>
       </div>
       <div class="video-content">
         <div class="video-client">Penrose Cancer Center — Colorado Springs, CO</div>
@@ -953,8 +1017,9 @@
     </div>
 
     <div class="video-card">
-      <div class="video-embed">
-        <iframe src="https://www.youtube.com/embed/g0BGZq_pAiQ" allowfullscreen loading="lazy"></iframe>
+      <div class="video-embed" onclick="openVideo('g0BGZq_pAiQ')">
+        <img src="https://img.youtube.com/vi/g0BGZq_pAiQ/hqdefault.jpg" alt="Skateboard Dad TV Spot" style="width:100%;height:100%;object-fit:cover;">
+        <div class="click-overlay">▶ Click to Watch</div>
       </div>
       <div class="video-content">
         <div class="video-client">Oakwood Hospitals — Michigan</div>
@@ -965,13 +1030,14 @@
     </div>
 
     <div class="video-card">
-      <div class="video-embed">
-        <iframe src="https://www.youtube.com/embed/OWfGiMKbw0g" allowfullscreen loading="lazy"></iframe>
+      <div class="video-embed" onclick="openVideo('OWfGiMKbw0g')">
+        <img src="https://img.youtube.com/vi/OWfGiMKbw0g/hqdefault.jpg" alt="Heartbeats TV Spot" style="width:100%;height:100%;object-fit:cover;">
+        <div class="click-overlay">▶ Click to Watch</div>
       </div>
       <div class="video-content">
-        <div class="video-client">Oakwood Heart & Vascular Center — Michigan</div>
+        <div class="video-client">Oakwood Heart &amp; Vascular Center — Michigan</div>
         <div class="video-title">Heartbeats — $200M Launch TV Spot</div>
-        <div class="video-desc">Introductory broadcast campaign for the new $200M Oakwood Surgical Pavilion & Heart and Vascular Center. Solo project from concept through final edit.</div>
+        <div class="video-desc">Introductory broadcast campaign for the new $200M Oakwood Surgical Pavilion &amp; Heart and Vascular Center. Solo project from concept through final edit.</div>
         <div class="video-result">$200M facility launch campaign</div>
       </div>
     </div>
@@ -1017,6 +1083,50 @@
   <div class="footer-logo">Alan Wolstencroft, MBA</div>
   <div class="footer-copy">© 2026 · Executive Creative Director · Healthcare Marketing</div>
 </footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-close" onclick="closeLightbox()">×</div>
+  <img id="lightbox-img" src="" alt="" style="display:none;">
+  <iframe id="lightbox-video" class="lightbox-video" src="" allowfullscreen style="display:none;"></iframe>
+</div>
+
+<script>
+function openLightbox(src) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  const vid = document.getElementById('lightbox-video');
+  img.src = src;
+  img.style.display = 'block';
+  vid.style.display = 'none';
+  vid.src = '';
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function openVideo(id) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  const vid = document.getElementById('lightbox-video');
+  img.style.display = 'none';
+  vid.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1';
+  vid.style.display = 'block';
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  const lb = document.getElementById('lightbox');
+  const vid = document.getElementById('lightbox-video');
+  lb.classList.remove('active');
+  vid.src = '';
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
 
 </body>
 </html>
